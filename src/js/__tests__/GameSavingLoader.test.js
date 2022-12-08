@@ -10,8 +10,9 @@ test('Возвращает объект класса GameSaving', done => {
             level: 10,
             points:2000
         }};
-    GameSavingLoader.load().then(savings => {
+    (async () => {
+        const savings = await GameSavingLoader.load();
         expect(savings).toEqual(expectings);
         done();
-    });
+    })();
 });

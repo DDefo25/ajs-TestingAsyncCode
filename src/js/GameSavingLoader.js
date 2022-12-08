@@ -3,12 +3,10 @@ import json from './parser';
 import GameSaving from './GameSaving';
 
 export default class GameSavingLoader {
-    static load() {
-        return read().then(data => {
-            return json(data);
-        }).then(value => {
-            return new GameSaving(JSON.parse(value));
-        });
+    static async load() {
+        const data = await read();
+        const value = await json(data);
+        return new GameSaving(JSON.parse(value));
     }
 }
 
