@@ -1,10 +1,10 @@
-import GameSavingLoader from './GameSavingLoader';
+import GameSavingLoader from "./GameSavingLoader";
 
 (async () => {
     try {
         const savings = await GameSavingLoader.load();
         return savings;
-    }   catch (e) {
+    } catch (e) {
         return e;
     }
-})()
+})();
